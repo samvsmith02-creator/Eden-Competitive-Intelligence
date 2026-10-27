@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import { ClosingCTA, Eyebrow, PageHero, TextLink } from "@/components/shared";
+import { industries } from "@/lib/content";
+export const metadata: Metadata = { title: "Industries", description: "Research capabilities for healthcare, professional services, retail, real estate, multi-location businesses, and emerging companies." };
+export default function IndustriesPage() {
+  return <><PageHero eyebrow="Industries" title="Intelligence Across Competitive Markets." description="Every industry has its own dynamics. Our approach starts with understanding the environment in which your business competes." /><section className="section section-ivory"><div className="container"><div className="industry-intro"><Eyebrow>A tailored perspective</Eyebrow><p>These are sectors EDEN is equipped to research. They represent areas of capability, rather than claims of established clients or past engagements.</p></div><div className="industry-grid">{industries.map((industry, i) => <article key={industry.title} className="industry-card"><span className="index-number">0{i + 1}</span><h2>{industry.title}</h2><p>{industry.description}</p><div className="industry-question"><span className="small-label">A question worth asking</span><p>{industry.question}</p></div><TextLink href="/contact">Discuss your market</TextLink></article>)}</div></div></section><ClosingCTA /></>;
+}
